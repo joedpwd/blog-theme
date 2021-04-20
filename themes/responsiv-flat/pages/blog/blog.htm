@@ -1,0 +1,36 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+<section id="layout-title">
+    <div class="container">
+        <h3>Blog</h3>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            {% partial 'blog/blog-post-list' %}
+        </div>
+        <div class="col-sm-3">
+            {% partial 'blog/blog-categories' %}
+        </div>
+    </div>
+</div>
+
+<br>

@@ -1,0 +1,41 @@
+title = "Demonstration"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = 404
+==
+<section class="home-title">
+    <div class="container">
+        <h1>HELLO WORLD</h1>
+    </div>
+</section>
+
+<br />
+
+<div class="container">
+
+    <!-- Services -->
+    <div class="row">
+        <div class="col-sm-9">
+            {% partial 'blog/blog-post-list' %}
+        </div>
+        <div class="col-sm-3">
+            {% partial 'blog/blog-categories' %}
+        </div>
+    </div>
+
+</div>
+
+<br />

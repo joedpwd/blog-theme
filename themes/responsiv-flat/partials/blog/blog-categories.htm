@@ -1,0 +1,29 @@
+==
+{% set categories = blogCategories.categories %}
+
+<!-- Search -->
+<!-- <form role="form">
+    <div class="well">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search posts...">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+</form> -->
+
+<!-- Categories -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Categories
+    </div>
+    <ul class="list-group filter-list-group">
+    
+    {% for category in categories %}
+        {% set postCount = category.post_count %}
+        <li class="list-group-item"><a href="{{ category.url }}">{{ category.name }}</a> <span class="badge">{{ postCount }}</span></li>
+    {% endfor %}
+    
+    </ul>
+</div>
